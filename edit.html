@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- my own external css sheet-->
+    <link rel="stylesheet" type="text/css" href="style_edit.css">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    
+    <title>de mesa, robbie | editor mode</title>
+
+  </head>
+
+  <body>
+    
+    <div id="loginDiv" class="">
+      <div class="loginContent">
+        <form id="login-form">
+          <input type="text" class="login-input" name="email" placeholder="email" required>
+          <br>
+          <input type="password" class="login-input" name="password" placeholder="password" required>
+          <br> <br>
+          <button class="login-button"><p class="login-p">login</p></button>  
+        </form>
+      </div>
+    </div>
+
+    <div id="mainDiv" class="d-none">
+
+    <h6  style="padding: 20px; background-color: rgb(29, 29, 29);">&nbsp</h6>
+
+    <section class="bg"><img class="bg_header" src="img/bg_header_v3.gif"></section>
+
+    <div class="header-style">
+      <h1 class="header_intro">DE MESA, ROBBIE</h1>
+    </div>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: rgb(29, 29, 29);">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#abt1">about me<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#edu1">education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#org1">organizations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#work1">previous works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cont1">contacts</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="button_logout" onclick="logout()">logout</button>
+          </li>
+        </ul>
+    </nav>
+
+    <br>
+
+
+
+    <!------------------------------------------------------------>
+    <!--                    about me section                    -->
+    <!------------------------------------------------------------>
+
+    <div class="main_div1" id="abt1">
+
+      <br><br><br>
+
+      <header class="main_header1">
+        <h1 class="h1_main1"> &lsaquo;about me&rsaquo;</h2>
+        <h6 class="h6_main1">// who i am</h4>
+      </header>
+
+      <br>
+      <div class="introImgFrame">
+        <div id="display-pic"><img class="introImg" src="img/spark2019.jpg"></div>
+      </div>
+
+      <br>
+
+            <!-- add intro form -->
+            <div class="div-form">
+              <form id="edit-intro-form">
+                <input type="text" class="text-intro" name="description" placeholder="<write new intro here>" required>
+                <button class="form-button-intro"><p>save</p></button>
+              </form>
+            </div>
+
+      <div class="introData" id="abt-text">
+        <!-- load about me details here -->
+      </div>
+
+      <br>
+    </div>
+
+    <br>
+
+    <!------------------------------------------------------------->
+    <!--                    education section                    -->
+    <!------------------------------------------------------------->
+
+    <div class="main_div1" id="edu1">
+
+      <br><br><br>
+
+      <header class="main_header1">
+        <h1 class="h1_main1"> &lsaquo;EDUCATION&rsaquo;</h2>
+        <h6 class="h6_main1">// where i come from</h4>
+      </header>
+
+      <br>
+
+      <!-- add education form -->
+      <div class="div-form">
+        <form id="add-edu-form">
+          <input type="text" name="school" placeholder="<school>" required>
+          <input type="text" name="levelStart" placeholder="<from grade level>" required>
+          <!-- levelEnd + tool tip -->
+          <input type="text" name="levelEnd" placeholder="<to grade level>">
+            <div class="form-tooltip">
+              <p>!</p>
+              <span class="tooltiptext">
+                leave this blank if you're still studying here!
+              </span>
+            </div>
+          <!-- program + tool tip -->
+          <input type="text" name="program" placeholder="<program>">
+            <div class="form-tooltip">
+              <p>!</p>
+              <span class="tooltiptext">
+                e.g. what strand? what program? leave out if not applicable
+              </span>
+            </div>
+          <input type="number" class="short-form" name="yearStart" placeholder="<from year>" required>
+          <!-- year end + tool tip -->
+          <input type="number" class="short-form" name="yearEnd" placeholder="<to year>">            
+            <div class="form-tooltip">
+              <p>!</p>
+              <span class="tooltiptext">
+                leave this blank if you're still studying here
+              </span>
+            </div>
+          <!-- image + tool tip -->
+          <input type="text" name="img" placeholder="<url of logo>">
+            <div class="form-tooltip">
+              <p>!</p>
+              <span class="tooltiptext">
+                you can leave this blank if you don't have the photo url
+              </span>
+            </div>
+          <button class="form-button"><p>+</p></button>
+        </form>
+      </div>
+
+      <br>
+
+      <div id="education-list">
+        <!-- load education details here -->  
+      </div>
+
+      <br><br>
+    </div>
+
+    <br>
+
+    <!----------------------------------------------------------------->
+    <!--                    organizations section                    -->
+    <!----------------------------------------------------------------->
+
+    <div class="main_div1" id="org1">
+
+      <br><br><br>
+
+      <header class="main_header1">
+        <h1 class="h1_main1"> &lsaquo;ORGANIZATIONS&rsaquo;</h2>
+        <h6 class="h6_main1">// where i belong to</h4>
+      </header>
+
+      <br>
+
+      <!-- add organization form -->
+      <div class="div-form">
+        <form id="add-org-form">
+          <input type="text" name="org" placeholder="<organization>" required>
+          <input type="text" name="position" placeholder="<position>" required>
+          <input type="number" class="short-form" name="yearStart" placeholder="<from year>" required>
+          <!-- year end + tool tip -->
+          <input type="number" class="short-form" name="yearEnd" placeholder="<to year>">            
+            <div class="form-tooltip">
+              <p>!</p>
+              <span class="tooltiptext">
+                leave this blank if you're still in this organization
+              </span>
+            </div>
+          <!-- image + tool tip -->
+          <input type="text" name="img" placeholder="<url of logo>">
+            <div class="form-tooltip">
+              <p>!</p>
+              <span class="tooltiptext">
+                you can leave this blank if you don't have the photo url
+              </span>
+            </div>
+          <button class="form-button"><p>+</p></button>
+        </form>
+      </div>
+
+      <br>
+
+      <div id="org-list">
+        <!-- load org details here -->
+      </div>
+
+      <br><br>
+    </div>
+
+    <br>
+
+    <!------------------------------------------------------------------>
+    <!--                    previous works section                    -->
+    <!------------------------------------------------------------------>
+
+    <div class="work_div1" id="work1">
+
+      <br><br><br>
+
+      <header class="main_header1">
+        <h1 class="h1_main1"> &lsaquo;PREVIOUS WORKS&rsaquo;</h2>
+        <h6 class="h6_main1">// what i've done so far</h4>
+      </header>
+
+      <br>
+
+      <!-- add work form -->
+      <div class="div-form">
+        <form id="add-work-form">
+          <input type="text" name="project" placeholder="<project>" required>
+          <input type="text" name="course" placeholder="<course>" required>
+          <input type="number" class="short-form" name="year" placeholder="<year>" required>
+          <input type="text" name="description" placeholder="<description>" required>
+          <!-- link + tool tip -->
+          <input type="text" name="link" placeholder="<link>">
+            <div class="form-tooltip">
+              <p>!</p>
+              <span class="tooltiptext">
+                you can leave this blank if you don't haven't uploaded it
+              </span>
+            </div>
+          <button class="form-button"><p>+</p></button>
+        </form>
+      </div>
+
+      <br>
+
+      <div id="work-list">
+        <!-- load previous works details here -->  
+      </div>
+
+      <br><br>
+    </div>
+
+    <br>
+
+    <!------------------------------------------------------------>
+    <!--                    contacts section                    -->
+    <!------------------------------------------------------------>
+
+    <div class="main_div1" id="cont1">
+
+      <br>
+
+      <header class="main_header1">
+        <h1 class="h1_main1"> &lsaquo;CONTACTS&rsaquo;</h2>
+        <h6 class="h6_main1">// where to find me :)</h4>
+      </header>
+
+      <!-- add contacts form -->
+      <div class="div-form">
+        <form id="add-contact-form">
+          <input type="text" name="img" placeholder="<photo url of platform>" required>
+          <input type="text" name="link" placeholder="<profile link>" required>
+          <button class="form-button"><p>+</p></button>
+        </form>
+      </div>
+
+      <br>
+
+      <div>
+        <table class="table_cont">
+          <tr class="tr_cont" id="contact_list">
+            <!-- load previous works details here -->
+
+          </tr>
+        </table>
+      </div>
+
+      <br>
+    </div>
+
+    <br>   
+  
+    <footer><img class="bg_footer" src="img/bg_footer.gif"></footer>
+
+  </div>
+
+
+   
+
+
+
+
+    <!-- ------------------------------------------------------------------------------ -->
+    <!--                           START OF FIREBASE STUFF                              -->
+    <!-- ------------------------------------------------------------------------------ -->
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+    <!-- Add SDKs for Firebase products that you want to use: https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+
+    <!-- Your web app's Firebase configuration -->
+    <script> 
+      var firebaseConfig = {
+        apiKey: "AIzaSyDOiLeGZK17lXxlX0_-yVT-tOUnB09ZvkU",
+        authDomain: "ccapdev-resume-demesa.firebaseapp.com",
+        databaseURL: "https://ccapdev-resume-demesa.firebaseio.com",
+        projectId: "ccapdev-resume-demesa",
+        storageBucket: "ccapdev-resume-demesa.appspot.com",
+        messagingSenderId: "115693739155",
+        appId: "1:115693739155:web:0a9d6ec3ddb2c2063b0166"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script src="javascript_edit.js"></script>
+  </body>
+  
+</html>
